@@ -19,7 +19,7 @@ Spindown ID is a mobile application that helps Magic: The Gathering players inst
 
 - **Frontend**: React 19.2.0 with TypeScript
 - **Build Tool**: Vite 6.2.0
-- **Styling**: Tailwind CSS with custom design system
+- **Styling**: Tailwind CSS (PostCSS plugin) with custom design system
 - **Mobile App**: Flutter + TensorFlow (on-device ML)
 - **Icons**: Custom SVG icons for features and branding
 
@@ -144,9 +144,13 @@ To use a custom domain:
 │   └── Footer.tsx       # Footer
 ├── hooks/               # Custom React hooks
 │   └── useOnScreen.tsx  # Intersection Observer hook
+├── src/                 # Source files
+│   └── index.css        # Tailwind CSS entry point
 ├── index.html           # HTML template
 ├── index.tsx            # React entry point
 ├── App.tsx              # Main app component
+├── tailwind.config.js   # Tailwind CSS configuration
+├── postcss.config.js    # PostCSS configuration
 └── vite.config.ts       # Vite configuration
 ```
 
@@ -157,7 +161,7 @@ To use a custom domain:
 - **Local Game Store Owners**: For pricing and trading assistance
 - **Traders**: Players who trade dice with others in their community
 
-## 📈 Features Highlights
+## 📈 Feature Highlights
 
 ### Camera Identification
 
