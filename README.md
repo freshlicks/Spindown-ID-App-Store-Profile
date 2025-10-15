@@ -19,7 +19,7 @@ Spindown ID is a mobile application that helps Magic: The Gathering players inst
 
 - **Frontend**: React 19.2.0 with TypeScript
 - **Build Tool**: Vite 6.2.0
-- **Styling**: Tailwind CSS (PostCSS plugin) with custom design system
+- **Styling**: Tailwind CSS (PostCSS plugin) with enhanced animations and custom design system
 - **Mobile App**: Flutter + TensorFlow (on-device ML)
 - **Icons**: Custom SVG icons for features and branding
 
@@ -31,7 +31,7 @@ The landing page features a custom design system with:
 - **Background**: `#121829` (Dark Blue)
 - **Surface**: `#1F2940` (Medium Blue)
 - **Typography**: Poppins font family
-- **Animations**: Smooth scroll-triggered animations and floating D20 dice
+- **Animations**: Enhanced scroll-triggered animations, floating D20 dice, fade-in effects, and interactive hover states
 
 ## 📱 App Availability
 

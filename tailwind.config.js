@@ -25,6 +25,9 @@ export default {
       animation: {
         float: "float 15s ease-in-out infinite",
         "float-reverse": "float-reverse 18s ease-in-out infinite",
+        "fade-in-up": "fadeInUp 0.8s ease-out",
+        pulse: "pulse 2s infinite",
+        spin: "spin 1s linear infinite",
       },
       keyframes: {
         float: {
@@ -34,6 +37,17 @@ export default {
         "float-reverse": {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
           "50%": { transform: "translateY(25px) rotate(-180deg)" },
+        },
+        fadeInUp: {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        pulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
+        },
+        spin: {
+          to: { transform: "rotate(360deg)" },
         },
       },
     },
