@@ -1,13 +1,30 @@
+# GitHub Actions workflow to build and deploy Vite React app to GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
+    # Runs on pushes targeting the main branch
     push:
-        branches: [main, master]
-    pull_request:
-        branches: [main, master]
+        branches: ["main"]
+
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+    group: "pages"
+    cancel-in-progress: false
 
 jobs:
     build-and-deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
         runs-on: ubuntu-latest
 
         steps:
@@ -26,10 +43,14 @@ jobs:
             - name: Build
               run: npm run build
 
-            - name: Deploy to GitHub Pages
-              if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-              uses: peaceiris/actions-gh-pages@v3
+            - name: Setup Pages
+              uses: actions/configure-pages@v5
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./dist
-                  # cname: your-domain.com # Uncomment and add your custom domain here if you have one
+                  path: ./dist
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4

@@ -80,9 +80,9 @@ The landing page features a custom design system with:
 
 ## 🚀 Deployment to GitHub Pages
 
-This project is configured for easy deployment to GitHub Pages. There are two methods:
+This project is configured with a GitHub Actions workflow for automatic deployment to GitHub Pages.
 
-### Method 1: Automated Deployment (Recommended)
+### Automated Deployment
 
 1. **Push your code to GitHub**
 
@@ -101,33 +101,26 @@ This project is configured for easy deployment to GitHub Pages. There are two me
 
 3. **Access your site**
    - Your site will be available at: `https://[your-username].github.io/Spindown-ID-App-Store-Profile/`
+   - Replace `[your-username]` with your actual GitHub username
 
-### Method 2: Manual Deployment
+### Workflow Features
 
-1. **Install gh-pages**
+The GitHub Actions workflow includes:
 
-   ```bash
-   npm install
-   ```
-
-2. **Deploy**
-
-   ```bash
-   npm run deploy
-   ```
-
-3. **Configure GitHub Pages**
-   - Go to Settings → Pages
-   - Under "Source", select "Deploy from a branch"
-   - Select "gh-pages" branch and "/ (root)" folder
+- **Node.js 18** setup with npm caching
+- **Automatic dependency installation** with `npm ci`
+- **Production build** with `npm run build`
+- **Deploy to GitHub Pages** using the latest GitHub Pages actions
+- **Manual trigger** option from the Actions tab
+- **Proper permissions** for GitHub Pages deployment
 
 ### Custom Domain (Optional)
 
 To use a custom domain:
 
-1. Add your domain to `.github/workflows/deploy.yml` in the `cname` field
-2. Create a `CNAME` file in the public folder with your domain name
-3. Configure DNS settings to point to GitHub Pages
+1. Create a `CNAME` file in the `public` folder with your domain name
+2. Configure DNS settings to point to GitHub Pages
+3. The workflow will automatically handle the custom domain
 
 ### Project Structure
 
