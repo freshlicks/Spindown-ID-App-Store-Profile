@@ -4,70 +4,74 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Enhanced Meta Tags -->
-    <meta
-      name="description"
-      content="Spindown ID - AI-powered die identification and collection management for Magic: The Gathering spindown dice collectors. Available exclusively on iOS and Android."
-    />
-    <meta
-      name="keywords"
-      content="MTG, Magic the Gathering, spindown dice, collection tracker, AI identification, dice collector, analytics"
-    />
-    <meta name="author" content="Spindown ID" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://spindownid.com/" />
-    <meta
-      property="og:title"
-      content="Spindown ID - AI-Powered MTG Spindown Dice Identification"
-    />
-    <meta
-      property="og:description"
-      content="AI-powered die identification and collection management for Magic: The Gathering spindown dice collectors. Available exclusively on iOS and Android."
-    />
-    <meta
-      property="og:image"
-      content="https://spindownid.com/assets/og-image.png"
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://spindownid.com/" />
-    <meta
-      property="twitter:title"
-      content="Spindown ID - AI-Powered MTG Spindown Dice Identification"
-    />
-    <meta
-      property="twitter:description"
-      content="AI-powered die identification and collection management for Magic: The Gathering spindown dice collectors. Available exclusively on iOS and Android."
-    />
-    <meta
-      property="twitter:image"
-      content="https://spindownid.com/assets/og-image.png"
-    />
-
-    <!-- iOS meta tags & icons -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Spindown ID" />
-
-    <title>Spindown ID - AI-Powered MTG Spindown Dice Identification</title>
-
-    <!-- Fonts -->
+    <title>Spindown ID</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#00F5D4",
+              primaryVariant: "#00BFA5",
+              background: "#121829",
+              surface: "#1F2940",
+              onPrimary: "#000000",
+              onBackground: "#E0E0E0",
+              onSurface: "#FFFFFF",
+              error: "#CF6679",
+              success: "#66BB6A",
+            },
+            animation: {
+              float: "float 15s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                "50%": { transform: "translateY(-25px) rotate(180deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes float-reverse {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(25px) rotate(-180deg);
+        }
+      }
+      .animate-float-reverse {
+        animation: float-reverse 18s ease-in-out infinite;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+        }
+      }
+    </script>
   </head>
-  <body class="bg-background">
+  <body class="bg-gray-50">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
